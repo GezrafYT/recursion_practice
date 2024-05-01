@@ -1,3 +1,5 @@
+import java.util.LinkedList;
+
 public class Tester
 {
     public static int sumArray(int[] a, int i, int count)
@@ -11,16 +13,16 @@ public class Tester
         return count;
     }
 
-    public static void q1(int[] arr, int i, int k)
+    public static void q1(int[] arr, int i, int k, int x)
     {
         if(k <= 9)
         {
-            if (arr[i] % 10 == k)
+            if (arr[i] % 10 == k || arr[i] % x == 0)
             {
                 System.out.println(arr[i]);
             }
 
-            q1(arr, i + 1, k);
+            q1(arr, i + 1, k, x);
         }
     }
 
@@ -37,6 +39,7 @@ public class Tester
 
         return count;
     }
+    
 
     public static void main(String[] args)
     {
@@ -44,7 +47,7 @@ public class Tester
         int count = 0;
         int[] arr = {25, 33, 52, 26, 92, 59, 76, 19, 20, 43};
 
-//        q1(arr, 0, 2);
+//        q1(arr, 0, 2, 4);
 //        System.out.println(sumArray(arr, 0, 0));
 //        System.out.println(q2(arr, 0, 0, 0));
     }
