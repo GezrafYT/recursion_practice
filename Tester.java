@@ -2,15 +2,15 @@ import java.util.LinkedList;
 
 public class Tester
 {
-    public static int sumArray(int[] a, int i, int count)
+    public static int sumArray(int[] a, int i, int sum)
     {
         if (i < a.length)
         {
-            count += a[i];
-            return sumArray(a, i + 1, count);
+            sum += a[i];
+            return sumArray(a, i + 1, sum);
         }
 
-        return count;
+        return sum;
     }
 
     public static void q1(int[] arr, int i, int k, int x)
@@ -39,7 +39,32 @@ public class Tester
 
         return count;
     }
-    
+
+    public static int q3(Node<Integer> n, int i, int length, int sum)
+    {
+        Node<Integer> pos = n;
+        Node<Integer> pos2 = n;
+        int num = 0;
+        while(pos != null)
+        {
+            length ++;
+
+            pos = pos.getNext();
+        }
+        q3(n, i, length, sum);
+
+        
+        while(pos2 != null)
+        {
+            if (i < length)
+            {
+
+
+                pos2 = pos2.getNext();
+            }
+        }
+
+    }
 
     public static void main(String[] args)
     {
